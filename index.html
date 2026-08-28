@@ -5,11 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sakthimurugan V | Portfolio </title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
   <style>
-    /* ======== GLOBAL ======== */
     * {
       margin: 0;
       padding: 0;
@@ -18,67 +16,106 @@
     }
 
     body {
-      background: linear-gradient(135deg, #0f172a, #1e293b, #0a192f);
-      color: white;
+      background:
+        linear-gradient(rgba(6, 20, 16, 0.94), rgba(6, 20, 16, 0.97)),
+        repeating-linear-gradient(0deg, rgba(45, 212, 138, 0.05) 0px, rgba(45, 212, 138, 0.05) 1px, transparent 1px, transparent 40px),
+        repeating-linear-gradient(90deg, rgba(45, 212, 138, 0.05) 0px, rgba(45, 212, 138, 0.05) 1px, transparent 1px, transparent 40px),
+        linear-gradient(135deg, #05100c, #071913, #030907);
+      color: #d7ecdf;
       scroll-behavior: smooth;
       line-height: 1.6;
       overflow-x: hidden;
     }
 
     h2 {
-      color: #7dd3fc;
-      font-size: 1.8rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: #33e0a1;
+      font-size: 1.7rem;
+      letter-spacing: 0.5px;
       margin-bottom: 25px;
-      border-left: 5px solid #7dd3fc;
+      border-left: 5px solid #d4af37;
       padding-left: 12px;
-      text-shadow: 0px 0px 15px rgba(125, 211, 252, 0.4);
+      text-shadow: 0px 0px 15px rgba(51, 224, 161, 0.35);
     }
 
     p, li {
       font-size: 1rem;
-      color: #e2e8f0;
+      color: #cdd9d2;
     }
 
     /* ======== HEADER ======== */
     header {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.5rem 4rem;
-      background: rgba(15, 23, 42, 0.85);
+      flex-direction: column;
+      padding: 0.8rem 4rem;
+      background: rgba(5, 16, 12, 0.9);
       backdrop-filter: blur(10px);
       position: sticky;
+      overflow: visible;
       top: 0;
       z-index: 100;
-      box-shadow: 0 5px 20px rgba(56, 189, 248, 0.1);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+      box-shadow: 0 5px 20px rgba(51, 224, 161, 0.12);
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      width: 100%;
+    }
+
+    .header-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      text-align: center;
+      order: 1;
     }
 
     header img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #38bdf8;
-      box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
-      transition: 0.5s;
+    width: 160px;      /* Increase as needed */
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #d4af37;
+    box-shadow: 0 0 20px rgba(212, 175, 55, .45);
+
+    position: absolute;
+    right: 40px;
+    top: -1px;      /* Makes the image overlap the header */
+    width: 135px;
+    height: 135px;        /* Distance from top */
+
+    transition: 0.5s;
     }
 
     header img:hover {
       transform: scale(1.08);
-      box-shadow: 0 0 30px rgba(56, 189, 248, 0.8);
+      box-shadow: 0 0 30px rgba(51, 224, 161, 0.8);
+    }
+
+    nav {
+      margin-top: 12px;
+      text-align: center;
+      width: 100%;
     }
 
     nav a {
-      color: #cbd5e1;
+      color: #a9c9b8;
       margin: 0 15px;
       text-decoration: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
       font-weight: 500;
       transition: 0.3s;
     }
 
     nav a:hover {
-      color: #38bdf8;
-      text-shadow: 0 0 10px rgba(56, 189, 248, 0.7);
+      color: #33e0a1;
+      text-shadow: 0 0 10px rgba(51, 224, 161, 0.7);
     }
 
     /* ======== SECTIONS ======== */
@@ -95,7 +132,7 @@
       width: 100%;
       height: 100%;
       opacity: 0.05;
-      background: radial-gradient(circle, #38bdf8, transparent 60%);
+      background: radial-gradient(circle, #33e0a1, transparent 60%);
       pointer-events: none;
     }
 
@@ -103,17 +140,18 @@
       font-size: 1.1rem;
       max-width: 700px;
       margin-top: 10px;
-      color: #e0f2fe;
-      text-shadow: 0px 0px 8px rgba(56, 189, 248, 0.2);
+      color: #dff5e8;
+      text-shadow: 0px 0px 8px rgba(51, 224, 161, 0.2);
+      text-align: justify;
     }
 
     /* ======== CARD STYLE ======== */
     .card {
-      background: linear-gradient(145deg, #1e293b, #334155);
-      border: 1px solid rgba(148, 163, 184, 0.2);
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 8px 8px 15px rgba(0,0,0,0.3), -4px -4px 12px rgba(255,255,255,0.05);
+      background: linear-gradient(145deg, #0a1f17, #10281d);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      padding: 12px 18px;
+      border-radius: 10px;
+      box-shadow: 8px 8px 15px rgba(0,0,0,0.35), -4px -4px 12px rgba(51, 224, 161, 0.03);
       transition: all 0.4s ease;
       transform-style: preserve-3d;
       perspective: 1000px;
@@ -121,19 +159,25 @@
 
     .card:hover {
       transform: translateY(-10px) rotateX(6deg) rotateY(6deg);
-      box-shadow: 0 10px 30px rgba(56, 189, 248, 0.3);
-      background: linear-gradient(135deg, #1e293b, #0ea5e9);
+      box-shadow: 0 10px 30px rgba(51, 224, 161, 0.3);
+      background: linear-gradient(135deg, #0d2a1e, #0f4a34);
+      border-color: rgba(212, 175, 55, 0.5);
     }
 
     .card h3 {
-      color: #7dd3fc;
-      margin-bottom: 8px;
-      text-shadow: 0 0 8px rgba(125, 211, 252, 0.4);
+      font-family: 'JetBrains Mono', monospace;
+      color: #d4af37;
+      margin-bottom: 6px;
+      text-shadow: 0 0 8px rgba(212, 175, 55, 0.35);
+    }
+
+    .card p {
+      margin: 2px 0;
     }
 
     .grid {
       display: grid;
-      gap: 25px;
+      gap: 18px;
     }
 
     /* ======== CONTACT ======== */
@@ -143,16 +187,17 @@
 
     .contact a {
       display: inline-block;
-      color: #38bdf8;
+      color: #33e0a1;
       text-decoration: none;
       margin: 10px 15px;
+      font-family: 'JetBrains Mono', monospace;
       font-weight: 500;
       transition: 0.3s;
     }
 
     .contact a:hover {
-      color: white;
-      text-shadow: 0 0 15px #38bdf8;
+      color: #d4af37;
+      text-shadow: 0 0 15px #33e0a1;
     }
 
     /* ======== RESUME ======== */
@@ -164,18 +209,21 @@
       display: inline-block;
       margin-top: 20px;
       padding: 12px 25px;
-      background: linear-gradient(90deg, #0ea5e9, #2563eb);
-      color: white;
-      border-radius: 10px;
+      background: linear-gradient(90deg, #0f7a4f, #0a5c3a);
+      color: #eafff2;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      border-radius: 8px;
       text-decoration: none;
+      font-family: 'JetBrains Mono', monospace;
       font-weight: 600;
       transition: 0.3s;
-      box-shadow: 0 5px 15px rgba(14,165,233,0.3);
+      box-shadow: 0 5px 15px rgba(15,122,79,0.35);
     }
 
     .resume-btn:hover {
-      background: linear-gradient(90deg, #38bdf8, #3b82f6);
-      box-shadow: 0 5px 25px rgba(56,189,248,0.5);
+      background: linear-gradient(90deg, #33e0a1, #0f9d64);
+      color: #06140f;
+      box-shadow: 0 5px 25px rgba(51,224,161,0.5);
       transform: translateY(-3px);
     }
 
@@ -183,19 +231,24 @@
     footer {
       text-align: center;
       padding: 25px;
-      background: rgba(15, 23, 42, 0.9);
-      color: #94a3b8;
-      font-size: 0.9rem;
-      box-shadow: 0 -5px 20px rgba(56, 189, 248, 0.1);
+      background: rgba(5, 16, 12, 0.95);
+      color: #7fa091;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      box-shadow: 0 -5px 20px rgba(51, 224, 161, 0.1);
     }
 
     @media (max-width: 768px) {
-      header {
+      .header-top {
         flex-direction: column;
         text-align: center;
       }
+      header img {
+        margin: 0 auto;
+      }
       nav {
-        margin-top: 10px;
+        text-align: center;
       }
       section {
         padding: 60px 6%;
@@ -208,17 +261,18 @@
 
   <!-- ===== HEADER ===== -->
   <header>
-    <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
-      <img src="Passport_Size_Magenta.png" alt="Sakthi Photo">
-      <div>
-        <h1 style="font-size:1.8rem;">SAKTHIMURUGAN V</h1>
-        <p style="color:#94a3b8;">ELECTRONICS AND COMMUNICATION ENGINEER</p>
+    <div class="header-top">
+      <img src="image.jpg" alt="Sakthi Photo">
+      <div class="header-info">
+        <h1 style="font-size:1.8rem; font-family:'JetBrains Mono', monospace; color:#eafff2; letter-spacing:1px;">SAKTHIMURUGAN V</h1>
+        <p style="color:#9fd6b8; font-size:1.0rem; font-family:'JetBrains Mono', monospace;">ELECTRONICS AND COMMUNICATION ENGINEER</p>
       </div>
     </div>
     <nav>
       <a href="#about">About</a>
       <a href="#education">Education</a>
       <a href="#skills">Skills</a>
+      <a href="#tools">Tools & Software</a>
       <a href="#internships">Internships</a>
       <a href="#projects">Projects</a>
       <a href="#certifications">Certifications</a>
@@ -235,7 +289,7 @@
         <p class="summary">
           An Enthusiastic, Proactive and Lifelong Learner with a solid foundation in Embedded Systems and VLSI. Thrive in collaborative environments and continuously seek to learn and adapt. Not just looking for a job but also ready to learn, grow, adapt and make an impact.
         </p>
-        <p style="margin-top:15px; font-style:italic; color:#a5f3fc;">“Precision in logic creates perfection in performance.”</p>
+        <p style="margin-top:15px; font-style:italic; color:#d4af37;">“Precision in logic creates perfection in performance.”</p>
       </div>
     </div>
   </section>
@@ -268,29 +322,62 @@
     <div class="grid">
       <div class="card">
         <h3>🧠 Technical Skills</h3>
-        <ul>
-          <li>Programming: C, Embedded C, Python (Basics)</li>
-          <li>Hardware Description: Verilog HDL, RTL Design, Simulation, Synthesis, ASIC Design</li>
-          <li>Electronics: Digital Electronics, PCB Design</li>
-          <li>Verification & Methodology: UVM (Universal Verification Methodology)</li>
-          <li>Communication Protocols: UART, SPI, I²C, CAN</li>
-          <li>Tools & Software: AMD Vivado, Proteus Design Suite, Arduino IDE, Visual Studio Code</li>
-          <li>Platforms: Wokwi, Blynk, Thingspeak</li>
-          <li>Microcontrollers: Arduino, ESP32, ESP8266, Raspberry Pi</li>
-        </ul>
+          <h4>🔌 Embedded </h4>
+          <p>➜ C, C++, Python (Basics) </p>
+          <p>➜ RTOS </p>
+          <p>➜ UART, SPI, I²C, CAN </p>
+          <p>➜ Microcontrollers, Sensors, Actuators </p>
+          <p>➜ Testing and Debugging </p>
+          <p>➜ Firmware Development </p>
+          <p>➜ Embedded Systems & IoT </p>
+          <p>➜ Hardware Software Integration </p>
+
+          <h4>💾 VLSI </h4>
+          <p>➜ Verilog HDL </p>
+          <p>➜ Digital Electronics </p>
+          <p>➜ FPGA, ASIC </p>
+          <p>➜ AMBA - APB, AHB, AXI </p>
+          <p>➜ RTL Design </p>
+          <p>➜ Simulation & Synthesis </p>
+          <p>➜ UVM </p>
+
       </div>
       <div class="card">
         <h3>💬 Soft Skills</h3>
-        <ul>
-          <li>Communication</li>
-          <li>Leadership</li>
-          <li>Team Work</li>
-          <li>Adaptability</li>
-          <li>Time Management</li>
-          <li>Quick Learner</li>
-          <li>Active Listener</li>
-          <li>Lifelong Learner</li>
-        </ul>
+
+          <p>➜ Communication</p>
+          <p>➜ Leadership</p>
+          <p>➜ Team Work</p>
+          <p>➜ Adaptability</p>
+          <p>➜ Time Management</p>
+          <p>➜ Quick Learner</p>
+          <p>➜ Active Listener</p>
+          <p>➜ Lifelong Learner</p>
+
+      </div>
+    </div>
+  </section>
+
+    <!-- ===== Tools and Software ===== -->
+  <section id="tools">
+    <h2>🛠️ Tools & 💻 Software</h2>
+    <div class="grid">
+      <div class="card">
+          <h3>🔌 Embedded </h3>
+          <p>➜ Arduino IDE </p>
+          <p>➜ Thonny IDE </p>
+          <p>➜ Keil uVision </p>
+          <p>➜ Proteus Design Suite </p>
+          <p>➜ Visual Studio Code </p>
+
+          <h3>💾 VLSI </h3>
+          <p>➜ AMD Vivado </p>
+          <p>➜ Modelsim </p>
+          <p>➜ Xilinx ISE </p>
+          <p>➜ Icarus Verilog </p>
+          <p>➜ GTKWave </p>
+          <p>➜ Visual Studio Code </p>
+
       </div>
     </div>
   </section>
@@ -300,14 +387,30 @@
     <h2>💼 Internships</h2>
     <div class="grid">
       <div class="card">
-        <h3>Industrial based Embedded Systems with AI & IOT – NSIC, Chennai</h3>
+        <h3>Hardware Testing – VI Microsystems, Chennai</h3>
+        <p>January 2026 – April 2026</p>
+        <p>➜ Hands-on experience in embedded hardware testing, debugging, automation, and validation.</p>
+        <p>➜ Tested and programmed embedded systems using 8051, 8085, 8086, Arduino, ESP32, Raspberry Pi, and Pico.</p>
+        <p>➜ Validated IoT boards, embedded hardware, sensors, and peripheral interfaces.</p>
+      </div>
+      <div class="card">
+        <h3>C Programming (Virtual) – CodeAlpha</h3>
+        <p>October 2025 – November 2025</p>
+        <p>➜ Completed a hands-on internship focused on core and advanced concepts of the C programming language.</p>
+        <p>➜ Developed a strong understanding of data types, control statements, functions, arrays, pointers, strings, structures, file handling, and dynamic memory allocation.</p>
+        <p>➜ Designed and implemented multiple console-based applications using modular programming and problem-solving techniques.</p>
+      </div>
+      <div class="card">
+        <h3>Embedded Systems – NSIC, Chennai</h3>
         <p>July 2025 – August 2025</p>
-        <p>Gained hands-on experience in embedded systems, circuit simulation, and PCB design using Proteus Design Suite.</p>
+        <p>➜ Implemented sensor interfacing using ADC and GPIO.</p>
+        <p>➜ Worked with UART, SPI, and I2C protocols for device communication.</p>
+        <p>➜ Performed basic debugging and troubleshooting of embedded systems.</p>
       </div>
       <div class="card">
         <h3>Embedded Systems Intern – RETECH Solutions</h3>
         <p>August 2024 – August 2024</p>
-        <p>Worked with microcontrollers, sensors, and interfacing techniques. Completed a project titled Traffic light controller using Arduino Uno.</p>
+        <p>➜ Worked with microcontrollers, sensors, and interfacing techniques. Completed a project titled Traffic light controller using Arduino Uno.</p>
       </div>
     </div>
   </section>
@@ -317,20 +420,53 @@
     <h2>🛠 Projects</h2>
     <div class="grid">
       <div class="card">
-        <h3>Parameterized 4-bit ALU using Verilog</h3>
-        <p>Designed a parameterized ALU supporting ADD, SUB, AND, OR using Verilog HDL. Simulated in Vivado.</p>
+        <h3>IoT Smart Agriculture System</h3>
+        <p>➜ Developed an IoT-based smart agriculture system for monitoring and automating agricultural parameters.</p>
+        <p>➜ Monitored soil moisture, temperature, humidity, and other environmental conditions using sensors.</p>
+        <p>➜ Collected and displayed real-time sensor data using ESP32.</p>
+        <p>➜ Enabled automated irrigation and improved water management based on soil conditions.</p>
       </div>
       <div class="card">
-        <h3>Traffic Light Controller (FSM)</h3>
-        <p>Implemented Mealy FSM-based traffic control system with dynamic timing using Verilog.</p>
+        <h3>Smart Soil Nutrition Monitoring System</h3>
+        <p>➜ Developed an IoT-based soil monitoring system to analyze soil health for better agricultural productivity.</p>
+        <p>➜ Monitored soil parameters such as NPK, moisture, temperature, and pH.</p>
+        <p>➜ Collected real-time data using sensors and ESP32.</p>
+        <p>➜ Enabled efficient fertilizer management and soil health monitoring.</p>
+      </div>
+      <div class="card">
+        <h3>Smart Guide System for Visually Impaired</h3>
+        <p>➜ Developed an assistive navigation system using Raspberry Pi Zero 2W.</p>
+        <p>➜ Implemented sensor interfacing using ADC and GPIO.</p>
+        <p>➜ Worked with UART, SPI, and I2C protocols for device communication.</p>
+        <p>➜ Performed basic debugging and troubleshooting of embedded systems.</p>
       </div>
       <div class="card">
         <h3>Colour Based Product Sorting Robot</h3>
-        <p>Built a color-based product sorting robot using sensors and microcontroller control for automated material classification.</p>
+        <p>➜ Developed an automated sorting robot to classify products.</p>
+        <p>➜ Detected product colors using camera.</p>
+        <p>➜ Controlled sorting mechanism using a Raspberry pi Pico W.</p>
+        <p>➜ Automated product classification for efficient sorting.</p>
       </div>
       <div class="card">
-        <h3>IoT Based Smart Soil Nutrition Monitoring System</h3>
-        <p>An IoT-based system that monitors soil nutrient levels in real time to support sustainable and efficient agricultural practices.</p>
+        <h3>Smart Patient Health Monitoring System</h3>
+        <p>➜ Developed a Smart Patient Health Monitoring System using ESP32.</p>
+        <p>➜ Implemented sensor interfacing using I2C, 1-Wire, and Analog interfaces.</p>
+        <p>➜ Integrated vital sign sensors for real-time monitoring.</p>
+        <p>➜ Performed embedded system debugging, testing, and hardware validation.</p>
+      </div>
+      <div class="card">
+        <h3>Parameterized 4-bit ALU using Verilog</h3>
+        <p>➜ Designed and implemented a parameterized 4-bit ALU using Verilog HDL for scalable RTL design.</p>
+        <p>➜ Developed and verified arithmetic and logical operations through Verilog testbenches and functional simulation.</p>
+        <p>➜ Synthesized, implemented, and programmed the design on an AMD Artix-7 FPGA using Vivado.</p>
+        <p>➜ Validated hardware functionality and gained hands-on experience in RTL design, FPGA implementation, and digital system verification.</p>
+      </div>
+      <div class="card">
+        <h3>Traffic Light Controller (FSM)</h3>
+        <p>➜ Designed and implemented an FSM-based Traffic Light Controller using Verilog HDL.</p>
+        <p>➜ Developed RTL for traffic signal sequencing using synchronous sequential logic.</p>
+        <p>➜ Synthesized, implemented, and validated the design on a Xilinx Spartan-6 FPGA using Xilinx ISE.</p>
+        <p>➜ Verified correct state transitions and timing through simulation and on-board hardware testing.</p>
       </div>
     </div>
   </section>
@@ -341,43 +477,57 @@
     <div class="grid">
       <div class="card">
         <h3>System Design Through Verilog</h3>
-        <p>Certified by NPTEL</p>
-        <p>Secured an Elite + Silver Medal.</p>
+        <p>➜ Certified by NPTEL</p>
+        <p>➜ Secured an Elite + Silver Medal.</p>
       </div>
       <div class="card">
         <h3>Embedded Systems Design</h3>
-        <p>Certified by NPTEL</p>
-        <p>Secured an Elite Medal.</p>
+        <p>➜ Certified by NPTEL</p>
+        <p>➜ Secured an Elite Medal.</p>
       </div>
       <div class="card">
         <h3>Embedded Systems Using C</h3>
-        <p>Certified by EDUCBA, Coursera</p>
-        <p>Achieved a Grade of 86.74%.</p>
+        <p>➜ Certified by EDUCBA, Coursera</p>
+        <p>➜ Achieved a Grade of 86.74%.</p>
       </div>
       <div class="card">
         <h3>Introduction to Internet of Things and Embedded Systems</h3>
-        <p>Certified by University of California, Coursera</p>
-        <p>Achieved a Grade of 99%.</p>
+        <p>➜ Certified by University of California, Coursera</p>
+        <p>➜ Achieved a Grade of 99%.</p>
       </div>
       <div class="card">
         <h3>Softskill Training on Interview Readiness</h3>
-        <p>Certified by NPTEL</p>
-        <p>Enhanced communication, leadership, interpersonal, and professional skills through structured soft skills training.</p>
+        <p>➜ Certified by NPTEL</p>
+        <p>➜ Enhanced communication, leadership, interpersonal, and professional skills through structured soft skills training.</p>
       </div>
     </div>
   </section>
 
   <!-- ===== RESUME ===== -->
-  <section id="resume">
-    <h2>📄 My Resume</h2>
-    <div class="grid">
-      <div class="card resume-section">
-        <p>You can download my resume below.</p>
-        <a href="Sakthimurugan V.pdf" download class="resume-btn">⬇ Download Resume</a>
-      </div>
-    </div>
-  </section>
+<section id="resume">
+  <h2>📄 My Resume</h2>
+  <div class="grid">
 
+    <!-- Embedded Resume -->
+    <div class="card resume-section">
+      <h3>🔌 Embedded Systems Resume</h3>
+      <p>Download my Embedded Systems resume showcasing projects, skills, and experience in Embedded C, IoT, Arduino, ESP32, and Raspberry Pi.</p>
+      <a href="Sakthimurugan_Embedded_Resume.pdf" download class="resume-btn">
+        ⬇ Download Embedded Resume
+      </a>
+    </div>
+
+    <!-- VLSI Resume -->
+    <div class="card resume-section">
+      <h3>💾 VLSI / RTL Design Resume</h3>
+      <p>Download my VLSI/RTL Design resume highlighting Verilog HDL, FPGA projects, RTL Design, FSM, and Digital Design skills.</p>
+      <a href="Sakthimurugan_VLSI_Resume.pdf" download class="resume-btn">
+        ⬇ Download VLSI Resume
+      </a>
+    </div>
+
+  </div>
+</section>
   <!-- ===== CONTACT ===== -->
   <section id="contact">
     <h2>📞 Contact</h2>
